@@ -1,0 +1,16 @@
+<div class="container-fluid photos">
+    <div class="row justify-content-center">
+
+        <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" *ngFor="let item of drawings">
+            <a [href]="'assets/images/'+item.name+'.jpg'" class="d-block photo-item" data-fancybox="gallery">
+                <img [src]="'assets/images/'+item.name+'.jpg'" alt="Image" class="img-fluid">
+                <div class="photo-text-more">
+                    <div class="photo-text-more">
+                        <h3 class="heading">{{item.name}}</h3>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+    </div>
+</div>

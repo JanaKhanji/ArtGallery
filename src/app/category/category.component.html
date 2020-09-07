@@ -1,0 +1,16 @@
+<div class="container-fluid photos">
+  <div class="row justify-content-center">
+    <div *ngFor="let item of categories" class=" col-6 col-md-6 "
+      [ngClass]="{'col-lg-8' : item.size==8 ,'col-lg-4': item.size!=8 }" data-aos="fade-up">
+      <a  [routerLink]="['/drawings', item.name]" class="d-block photo-item">
+        <img [src]="'assets/images/'+item.image+'.jpg'" alt="Image" class="img-fluid">
+        <div class="photo-text-more">
+          <div class="photo-text-more">
+            <h3 class="heading">{{item.name}}</h3>
+            <span class="meta"> {{item.count}} Photos</span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
