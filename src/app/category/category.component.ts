@@ -1,25 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Component } from '@angular/core';
+import { DrawingsService } from '../services/drawing-service';
+import { Categories } from '../models/category';
 
 @Component({
   selector: 'category',
   templateUrl: './category.component.html',
   styleUrls: ['./category.component.css']
 })
-export class CategoryComponent implements OnInit {
+export class CategoryComponent {
+  categories: Categories[];
 
-  categories :any;
-  constructor(private ApiCaller: HttpClient) {
-    this.getCategories()
-   }
-
-  ngOnInit(): void {
+  constructor(private drawingsService: DrawingsService) {
+    this.categories = this.drawingsService.getCategories();
   }
-  getCategories() {
-    this.ApiCaller
-      .get("https://jana-art-server.herokuapp.com/categories")
-      .subscribe(
-        x => { this.categories=x;
-        });
-  };
 }

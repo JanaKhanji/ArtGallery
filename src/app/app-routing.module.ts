@@ -10,7 +10,7 @@ const appRoutes: Routes = [
    {path: 'home', component: CategoryComponent },
    {path:'contact', component: ContactComponent}, 
    {path:'about', component: AboutComponent}, 
-   {path:'drawings/:name',component: DrawingPageComponent},
+   {path:'drawings/:category',component: DrawingPageComponent},
    {path:'drawings',component: DrawingPageComponent},
    { path: '',   redirectTo: '/home', pathMatch: 'full' },
 ];  

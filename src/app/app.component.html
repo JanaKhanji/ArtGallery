@@ -8,7 +8,6 @@
     <div class="site-mobile-menu-body"></div>
   </div>
 
-  
   <header class="header-bar d-flex d-lg-block align-items-center " data-aos="fade-left">
     <div class="site-logo">
       <a routerLink="/home">
@@ -25,14 +24,13 @@
         <li routerLinkActive="active"><a routerLink="/home">Home</a></li>
         <li routerLinkActive="active"><a routerLink="/drawings"> Drawings</a></li>
         <li routerLinkActive="active"><a routerLink="/about" >About me</a></li>
-        <li><a href="mailto:janokhanji@gmail.com" target="_blank ">Contact me</a></li>
-        <li><a href="https://www.instagram.com/janakhanji_/?hl=en" target="_blank ">instagram</a></li>
+        <li routerLinkActive="active"><a routerLink="/contact">Contact me</a></li>
       </ul>
     </div>
     <div class="main-menu">
       <div class="row justify-content-center fixed-bottom" style="margin:0">
         <div class="col-md-9 text-center ">
-          <p style="font-size: smaller;">
+          <p>
             Copyright &copy;
             <script>document.write(new Date().getFullYear());</script>
             <br>All rights reserved.
@@ -45,5 +43,4 @@
   <main class="main-content" style="margin-top:20px">
     <router-outlet></router-outlet>
   </main>
-
-</div> <!-- .site-wrap -->
+</div>

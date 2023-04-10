@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
+import { DrawingsService } from '../services/drawing-service';
+import { categoriesEnum } from '../models/category.enum';
+import { Drawing } from '../models/drawing';
 
 @Component({
   selector: 'app-drawing-page',
@@ -8,40 +10,15 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./drawing-page.component.css']
 })
 export class DrawingPageComponent implements OnInit {
-  name: string;
-  private sub: any;
-  drawings: any;
+  category: categoriesEnum;
 
-  constructor(private ApiCaller: HttpClient, private route: ActivatedRoute) {
-    this.getDrawings();
+  drawings: Drawing[];
+
+  constructor(private route: ActivatedRoute, private drawingsService: DrawingsService) {
   }
 
   ngOnInit(): void {
-    this.sub = this.route.params.subscribe(params => {
-      this.name = params['name'];
-    });
+    this.category = this.route.snapshot.paramMap.get('category') as categoriesEnum;
+    this.drawings = this.drawingsService.getDrawings(this.category);
   }
-  getDrawings() {
-    this.ApiCaller
-      .get("https://jana-art-server.herokuapp.com/drawings")
-      .subscribe(
-        x => {
-          this.drawings = x;
-          if (this.name.toLowerCase() == "hands") {
-            this.drawings = this.drawings.filter(drawing => drawing.category == "hands");
-          }
-          else if (this.name.toLowerCase() == "fanarts") {
-            this.drawings = this.drawings.filter(drawing => drawing.category == "fanarts");
-          }
-          else if (this.name.toLowerCase() == "originals") {
-            this.drawings = this.drawings.filter(drawing => drawing.category == "originals");
-          }
-          else if (this.name.toLowerCase() == "sketches") {
-            this.drawings = this.drawings.filter(drawing => drawing.category == "sketches");
-          }
-          else if (this.name.toLowerCase() == "challenges") {
-            this.drawings = this.drawings.filter(drawing => drawing.category == "challenges");
-          }
-        });
-  };
 }
