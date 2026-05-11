@@ -1,7 +1,26 @@
 import { categoriesEnum } from "./category.enum";
 
 export const drawings = [
-	
+	{name:"Self_Portrait",category:categoriesEnum.ORIGINALS},
+	{name:"Atom-Eve",category:categoriesEnum.FANARTS},
+	{name:"Bad-Girl",category:categoriesEnum.ORIGINALS},
+	{name:"Building",category:categoriesEnum.ORIGINALS},
+	{name:"Colored-Sketch",category:categoriesEnum.ORIGINALS},
+	{name:"Deers",category:categoriesEnum.ORIGINALS},
+	{name:"Demon",category:categoriesEnum.ORIGINALS},
+	{name:"Dolores",category:categoriesEnum.FANARTS},
+	{name:"Star",category:categoriesEnum.ORIGINALS},
+	{name:"Fallen-Angel",category:categoriesEnum.ORIGINALS},
+	{name:"Feet",category:categoriesEnum.ORIGINALS},
+	{name:"Frankenstein",category:categoriesEnum.FANARTS},
+	{name:"Frieren",category:categoriesEnum.FANARTS},
+	{name:"Giant-Cat",category:categoriesEnum.ORIGINALS},
+	{name:"Power-Puff-Girls",category:categoriesEnum.FANARTS},
+	{name:"Sky",category:categoriesEnum.ORIGINALS},
+	{name:"Smoky",category:categoriesEnum.ORIGINALS},
+	{name:"Twins",category:categoriesEnum.ORIGINALS},
+	{name:"peach",category:categoriesEnum.FANARTS},
+	{name:"redraw-colors",category:categoriesEnum.ORIGINALS},
 	{name:"Me",category:categoriesEnum.ORIGINALS},
 	{name:"Dont-Go",category:categoriesEnum.HANDS},
 	{name:"Broken",category:categoriesEnum.ORIGINALS},
@@ -13,6 +32,7 @@ export const drawings = [
 	{name:"RaquelTraveilIustration-challenge",category:categoriesEnum.CHALLENGES},
 	{name:"Break-Up",category:categoriesEnum.HANDS},
 	{name:"Forest",category:categoriesEnum.ORIGINALS},
+	{name:"Dark-Star",category:categoriesEnum.ORIGINALS},
 	{name:"Freak",category:categoriesEnum.ORIGINALS},
 	{name:"Fullmetal-Alchemist",category:categoriesEnum.FANARTS},
 	{name:"Sketch6",category:categoriesEnum.SKETCHES},
@@ -27,7 +47,6 @@ export const drawings = [
 	{name:"Safe",category:categoriesEnum.ORIGINALS},
 	{name:"Sagittarius",category:categoriesEnum.ORIGINALS},
 	{name:"Skullet",category:categoriesEnum.ORIGINALS},
-	{name:"Star",category:categoriesEnum.ORIGINALS},
 	{name:"Sketch3",category:categoriesEnum.SKETCHES},
 	{name:"Tomb-Raider",category:categoriesEnum.FANARTS},
 	{name:"Together", category:categoriesEnum.HANDS},
@@ -39,15 +58,15 @@ export const drawings = [
 	{name:"Last-Time",category:categoriesEnum.HANDS},
 	{name:"RossDraw-challenge",category:categoriesEnum.CHALLENGES},
 	{name:"XephiaArt-challenge",category:categoriesEnum.CHALLENGES},
-	{name:"Sketch4",category:categoriesEnum.SKETCHES}
+	{name:"Sketch4",category:categoriesEnum.SKETCHES},
 ];
 
 export const categories = [
 	{name: categoriesEnum.ORIGINALS, image: "Originals-Cover", size: 8},
 	{name: categoriesEnum.FANARTS, image: "Fanarts-Cover", size: 4},
+	{name: categoriesEnum.CHALLENGES, image: "Challenges-Cover", size: 4},
 	{name: categoriesEnum.HANDS, image: "Hands-Cover", size: 4},
 	{name: categoriesEnum.SKETCHES, image: "Sketches-Cover", size: 4},
-	{name: categoriesEnum.CHALLENGES, image: "Challenges-Cover", size: 4}
 ].map(category => ({
 	...category,
 	count: drawings.filter(d => d.category === category.name).length
