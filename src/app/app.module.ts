@@ -1,7 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
-
 import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -10,7 +8,6 @@ import { CategoryComponent } from './category/category.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { DrawingPageComponent } from './drawing-page/drawing-page.component';
-import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -18,16 +15,10 @@ import { RouterModule } from '@angular/router';
     CategoryComponent,
     AboutComponent,
     ContactComponent,
-    DrawingPageComponent
+    DrawingPageComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    HttpClientModule,
-    RouterModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

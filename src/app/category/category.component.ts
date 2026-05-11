@@ -5,7 +5,8 @@ import { Categories } from '../models/category';
 @Component({
   selector: 'category',
   templateUrl: './category.component.html',
-  styleUrls: ['./category.component.css']
+  styleUrls: ['./category.component.css'],
+  standalone: false,
 })
 export class CategoryComponent {
   categories: Categories[];

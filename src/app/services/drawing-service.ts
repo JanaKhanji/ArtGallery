@@ -4,17 +4,18 @@ import { categories, drawings } from '../models/data';
 import { Drawing } from '../models/drawing';
 import { Categories } from '../models/category';
 
-@Injectable({providedIn: 'root'})
+@Injectable({ providedIn: 'root' })
 export class DrawingsService {
-    constructor() { }
+  constructor() {}
 
-    getCategories(): Categories[] {
-        return categories;
-    }
+  getCategories(): Categories[] {
+    return categories;
+  }
 
-    getDrawings(category: categoriesEnum = null): Drawing[] {
-        if (category) {
-            return drawings.filter(el => el.category === category);
-        } return drawings;
+  getDrawings(category?: categoriesEnum | null): Drawing[] {
+    if (category) {
+      return drawings.filter(el => el.category === category);
     }
+    return drawings;
+  }
 }

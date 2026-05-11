@@ -1,7 +1,7 @@
 export enum categoriesEnum {
-    HANDS = 'HANDS',
-    FANARTS = 'FANARTS',
-    ORIGINALS = 'ORIGINALS',
-    SKETCHES = 'SKETCHES',
-    CHALLENGES = 'CHALLENGES',
+    HANDS = 'hands',
+    FANARTS = 'fanarts',
+    ORIGINALS = 'originals',
+    SKETCHES = 'sketches',
+    CHALLENGES = 'challenges',
 }
